@@ -1,10 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
+    <title>Homeland Triple Ten</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="favicon.ico" />
+    <meta
+      name="description"
+      content="Alrededor de los Estados Unidos, mostrando los estados más importantes para explorar"
+    />
+    <meta name="keywords" content="HTML, CSS, media queries, Javascript" />
+    <meta name="author" content="MarioMN" />
+    <title>Project Around</title>
+    <link rel="shorcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/logo.svg"
+          alt="Logo alrededor de usa"
+        />
+      </header>
+      <hr id="line" />
+      <main class="content">
+        <section class="profile">
+          <div class="profile__column">
+            <img
+              class="profile__image"
+              src="./images/Avatar.png"
+              alt="imagen del explorador Jacques Cousteau"
+            />
+            <div class="profile__info">
+              <h1 class="profile__title">Jacques Cousteau</h1>
+              <button class="profile__edit-button" type="button">
+                <img
+                  src="./images/Edit Button.png"
+                  alt="Botón para editar"
+                  class="profile__edit-button-image"
+                />
+              </button>
+              <h2 class="profile__subtitle">Explorador</h2>
+            </div>
+          </div>
+          <button class="profile__add-button" type="button">
+            <img
+              src="./images/Add Button.png"
+              alt="Botón para editar"
+              class="profile__add-button-image"
+            />
+          </button>
+        </section>
+        <section class="cards">
+          <ul class="cards__content">
+            <li class="cards__item">
+              <img
+                src="./images/image1.jpg"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Valle de Yosemite</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="cards__item">
+              <img
+                src="./images/image2.png"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Lago Louise</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="cards__item">
+              <img
+                src="./images/image3.png"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Montañas Calvas</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="cards__item">
+              <img
+                src="./images/imge4.png"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Latemar</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="cards__item">
+              <img
+                src="./images/image5.png"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Vanois National...</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="cards__item">
+              <img
+                src="./images/image6.png"
+                alt="imágen del valle de Yosemite"
+                class="cards__image"
+              />
+              <button class="cards__trash-button">
+                <img
+                  src="./images/trash.svg"
+                  alt="trash picture"
+                  class="cards__trash-button-image"
+                />
+              </button>
+              <div class="cards__image-info">
+                <p class="cards__image-text">Lago di Braies</p>
+                <button
+                  class="cards__hearth-button cards__hearth-button_active"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <!-- Aquí empieza lo del formulario -->
+      <section class="popup">
+        <div class="popup__container">
+          <form class="popup__form form">
+            <button class="popup__button-cross">
+              <img src="./images/Close Icon.png" alt="imagén de una cruz" />
+            </button>
+            <fieldset class="popup__form-fieldset">
+              <h3 class="popup__title">Nuevo lugar</h3>
+              <input
+                class="popup__form-input"
+                type="text"
+                placeholder="Nombre"
+                required
+                id="name"
+              />
+              <input
+                class="popup__form-input"
+                type="text"
+                placeholder="Acerca de mi"
+                required
+                id="name"
+              />
+              <button class="popup__form-button" type="submit">
+                <p class="popup__form-button-text">Guardar</p>
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2024 Mario MN</p>
+      </footer>
+    </div>
+    <!--  Etiqueta script -->
+    <script src="./script/script.js"></script>
+  </body>
 </html>
