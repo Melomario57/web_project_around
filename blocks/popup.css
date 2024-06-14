@@ -2,15 +2,13 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 4;
+  z-index: 3;
   height: 100%;
   position: fixed;
 }
 .popup__container {
   transform: translate(-50%, -50%);
   position: fixed;
-  width: 430px;
-  height: 330px;
   top: 35%;
   left: 50%;
 }

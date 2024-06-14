@@ -16,6 +16,35 @@
   </head>
   <body>
     <div class="page">
+      <section class="popup">
+        <div class="popup__container">
+          <form class="popup__form form">
+            <button class="popup__button-cross">
+              <img src="./images/Close Icon.png" alt="imagén de una cruz" />
+            </button>
+            <fieldset class="popup__form-fieldset">
+              <h3 class="popup__title">Nuevo lugar</h3>
+              <input
+                class="popup__form-input popup__form-input-name"
+                type="text"
+                placeholder="Nombre"
+                required
+                id="name"
+              />
+              <input
+                class="popup__form-input popup__form-input-about"
+                type="text"
+                placeholder="Acerca de mi"
+                required
+                id="about"
+              />
+              <button class="popup__form-button" type="submit">
+                <p class="popup__form-button-text">Guardar</p>
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
       <header class="header">
         <img
           class="header__logo"
@@ -184,35 +213,7 @@
         </section>
       </main>
       <!-- Aquí empieza lo del formulario -->
-      <section class="popup">
-        <div class="popup__container">
-          <form class="popup__form form">
-            <button class="popup__button-cross">
-              <img src="./images/Close Icon.png" alt="imagén de una cruz" />
-            </button>
-            <fieldset class="popup__form-fieldset">
-              <h3 class="popup__title">Nuevo lugar</h3>
-              <input
-                class="popup__form-input"
-                type="text"
-                placeholder="Nombre"
-                required
-                id="name"
-              />
-              <input
-                class="popup__form-input"
-                type="text"
-                placeholder="Acerca de mi"
-                required
-                id="name"
-              />
-              <button class="popup__form-button" type="submit">
-                <p class="popup__form-button-text">Guardar</p>
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </section>
+
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Mario MN</p>
       </footer>

@@ -76,7 +76,7 @@
     width: 282px;
     height: 322px;
   }
-  .popup-form__button {
+  .popup__form-button {
     width: 238px;
     height: 46px;
     margin-right: 0;
@@ -84,7 +84,7 @@
     margin-top: 10%;
   }
 
-  .popup-form__button-text {
+  .popup__form-button-text {
     font-weight: 500;
     font-family: "Inter" Arial, Helvetica, sans-serif;
     color: white;

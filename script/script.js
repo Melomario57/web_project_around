@@ -9,9 +9,20 @@ function toggleForm() {
 
 openButton.addEventListener("click", toggleForm);
 closeButton.addEventListener("click", toggleForm);
+saveButton.addEventListener("click", toggleForm);
 
-function formSubmit(event) {
-  event.noRecharge();
+let formElement = document.querySelector(".popup__form");
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = inputName.value;
+  profileJob.textContent = inputJob.value;
 }
 
-saveButton.addEventListener("submit", formSubmit);
+let profileName = document.querySelector(".profile__title");
+let profileJob = document.querySelector(".profile__subtitle");
+
+let inputName = document.querySelector("#name").value;
+let inputJob = document.querySelector("#about").value;
+
+formElement.addEventListener("submit", handleProfileFormSubmit);

@@ -6,19 +6,13 @@
 
 ### Se realizará una página interactiva acerca de algunos estados pertenecientes a USA, al mismo tiempo, los usuarios que deseen acceder a la al sitio web podrán añadir, eliminar o dar like a las fotos.
 
-## Imágen del proyecto en la siguientes resoluciones:
+## El proyecto se adaptara en las siguientes resoluciones:
 
 1. 1280px
 
-![alt text](image.png)
-
 2. 800px
 
-![alt text](image-1.png)
-
 3. 320px
-
-![alt text](image-2.png)
 
 ## ¿Que novedades se agregarán?
 
