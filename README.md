@@ -18,13 +18,7 @@
 
 ### Este será el primer proyecto que se le implementará Javascript, como muestra de ello se va a programar un cuadro de alerta, el cuál contendrá el nombre, apellidos que se buscan agregar y un botón de guardar. Lo más importante de esto, es que los datos guardados si se reflejen en la página.
 
-## Imágen del cuadro de alerta:
-
-![alt text](image-3.png)
-
-### Por otra parte, se trabajará con ramas git de una manera más profesional, conformado por el siguiente esquema:
-
-![alt text](image-4.png)
+### Por otra parte, se trabajará con ramas git de una manera más profesional, conformado por el siguiente manera:
 
 1. ### La rama Features representá cada parte del sitio web, es decir se crearán ramas por separadas, por ejemplo feature/header representá el encabezado.
 

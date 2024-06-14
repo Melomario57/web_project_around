@@ -17,6 +17,8 @@ closeButton.addEventListener("click", toggleForm);
 saveButton.addEventListener("click", toggleForm);
 likeButton.addEventListener("click", toggleFormButton);
 
+/* Editar nombre y acerca de mi en el formulario */
+
 let formElement = document.querySelector(".popup__form");
 
 function handleProfileFormSubmit(evt) {

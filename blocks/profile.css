@@ -79,6 +79,7 @@
   grid-area: edit;
   background-color: black;
   border: 0;
+  padding-bottom: 2%;
 }
 
 .profile__edit-button:hover {
