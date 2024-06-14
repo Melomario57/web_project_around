@@ -88,9 +88,6 @@
 }
 
 @media screen and (max-width: 920px) and (min-width: 800px) {
-  .profile__image {
-    margin-left: 2%;
-  }
   .profile {
     width: 800px;
   }
@@ -138,7 +135,6 @@
     margin-bottom: 2px;
     width: 20px;
     height: 20px;
-    padding-bottom: 3%;
   }
 
   .profile__edit-button {
