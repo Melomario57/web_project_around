@@ -52,7 +52,7 @@
   margin-right: 21px;
   margin-top: 4px;
   background-image: url("/images/like.svg");
-
+  background-color: transparent;
   border: none;
   background-repeat: no-repeat;
 }
