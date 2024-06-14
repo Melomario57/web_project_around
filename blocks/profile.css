@@ -16,7 +16,7 @@
   grid-template-areas:
     "title edit"
     "subtitle.";
-  gap: 18px;
+  gap: 20px;
   padding-top: 22px;
   align-items: baseline;
 }
@@ -28,7 +28,7 @@
 .profile__title {
   font-weight: 500;
   font-size: 42px;
-  font-family: Inter;
+  font-family: "Inter";
   margin: 0;
   line-height: 1.15;
   grid-area: title;
