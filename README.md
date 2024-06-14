@@ -34,4 +34,4 @@
 
 ## Link GitHub Pages:
 
-## https://melomario57.github.io/web_project_around/
+## https://melomario57.github.io/web_project_around/index.html
