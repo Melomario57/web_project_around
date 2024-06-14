@@ -48,7 +48,7 @@
 
 .button__image {
   width: 21px;
-  height: 19px;
+  height: 21px;
   margin-right: 21px;
   margin-top: 4px;
 }
@@ -59,13 +59,10 @@
   margin-top: 4px;
   background-image: url("/images/like.svg");
   background-color: transparent;
-
-  background-repeat: no-repeat;
-
   border: none;
-
+  background-repeat: no-repeat;
   transition: background-color 0.5s;
-  z-index: 2;
+
   cursor: pointer;
 }
 .cards__hearth-button:hover {
@@ -73,10 +70,15 @@
   cursor: pointer;
 }
 
-.cards__hearth-button_active:active {
-  background-image: url("/images/black-like.png");
+.cards__hearth-button_active {
+  background-image: url("/images/Union.svg");
   background-color: transparent;
   transition: 0.3s;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
+  margin-right: 21px;
+  margin-top: 4px;
 }
 
 .cards__image-info {

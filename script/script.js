@@ -2,14 +2,20 @@ let popUp = document.querySelector(".popup");
 let openButton = document.querySelector(".profile__edit-button");
 let closeButton = document.querySelector(".popup__button-cross");
 let saveButton = document.querySelector(".popup__form-button");
+let likeButton = document.querySelector(".cards__hearth-button");
 
 function toggleForm() {
   popUp.classList.toggle("popup_opened");
 }
 
+function toggleFormButton() {
+  likeButton.classList.toggle("cards__hearth-button_active");
+}
+
 openButton.addEventListener("click", toggleForm);
 closeButton.addEventListener("click", toggleForm);
 saveButton.addEventListener("click", toggleForm);
+likeButton.addEventListener("click", toggleFormButton);
 
 let formElement = document.querySelector(".popup__form");
 
