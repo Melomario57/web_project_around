@@ -13,11 +13,13 @@ function toggleForm() {
 openButton.addEventListener("click", toggleForm);
 closeButton.addEventListener("click", toggleForm);
 
+/*
 function save() {
   popUp.classList.toggle("popup_opened");
 }
 
 saveButton.addEventListener("click", save);
+*/
 /* Editar nombre y acerca de mi en el formulario */
 
 let formElement = document.querySelector(".popup__form");
@@ -42,7 +44,21 @@ function handleProfileFormSubmit(evt) {
 
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  popUp.classList.toggle(".popup_opened");
+  popUp.classList.toggle("popup_opened");
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
+
+document.querySelectorAll(".cards__hearth-button").forEach(function (button) {
+  button.addEventListener("click", function () {
+    button.classList.toggle("cards__hearth-button_active");
+  });
+});
+/*
+function createCard() {
+  //el texto
+  //eventos
+  //dentro de la tarjeta nueva buscas cada boton y le asignas el evento correspondiente
+  //colocar la foto
+}
+*/

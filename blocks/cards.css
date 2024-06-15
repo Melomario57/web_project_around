@@ -51,7 +51,7 @@
   height: 21px;
   margin-right: 21px;
   margin-top: 4px;
-  background-image: url("/images/like.svg");
+  background-image: url("../images/like.svg");
   background-color: transparent;
   border: none;
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@
 }
 
 .cards__hearth-button_active {
-  background-image: url("/images/Union.svg");
+  background-image: url("../images/Union.svg");
   background-color: transparent;
   transition: 0.3s;
   background-repeat: no-repeat;
