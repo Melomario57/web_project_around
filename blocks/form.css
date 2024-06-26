@@ -1,5 +1,4 @@
-.popup__button-cross,
-.popup__button-cross-image {
+.popup__button-cross {
   position: absolute;
   top: -33px;
   right: -30px;
@@ -90,8 +89,7 @@
     padding-left: 3%;
     margin-top: 10%;
   }
-  .popup__button-cross,
-  .popup__button-cross-image {
+  .popup__button-cross {
     width: 30px;
     height: 30px;
     position: absolute;

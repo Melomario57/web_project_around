@@ -42,6 +42,20 @@
 
 - ### Mejorar el diseño responsivo agregando más medidas en las consultas de medios.
 
+# Segunda Parte
+
+## Cuales son las siguientes novedades?
+
+- ### Agregar un nuevo formulario que contendrá las funcionalidades necesarias para agregar, remover(se agregá funcionalidad al icono de trash) o cambiar el orden de estas mismas.
+
+- ## Al seleccionar una imágen, esta deberá aparecer de manera emergente, es decir, al hacer click dicha imágen se agarandará junto a su respectivo nombre y se ajustara su tamaño dependiendo la resolución del dispositivo.
+
+# Imágenes con la funcionalidades mencionadas con anterioridad:
+
+![alt text](image-3.png)
+
+![alt text](image-2.png)
+
 ## Link GitHub Pages:
 
 ## https://melomario57.github.io/web_project_around/index.html

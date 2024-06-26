@@ -10,12 +10,13 @@
     <meta name="keywords" content="HTML, CSS, media queries, Javascript" />
     <meta name="author" content="MarioMN" />
     <title>Project Around</title>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="./fav.ico" />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
-      <section class="popup">
+      <!-- Formulario boton editar -->
+      <section class="popup pop">
         <div class="popup__container">
           <form class="popup__form form">
             <button class="popup__button-cross" type="button">
@@ -38,6 +39,40 @@
                 id="about"
               />
               <button class="popup__form-button" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <!-- Formulario para agregar imagenes -->
+      <section class="popup" id="popupImage">
+        <div class="popup__container">
+          <form class="popup__form form" id="imageForm">
+            <button class="popup__button-cross" type="button" id="addCross">
+              <img src="./images/Close.png" alt="imagén de una cruz" />
+            </button>
+            <fieldset class="popup__form-fieldset">
+              <h3 class="popup__title">Nuevo lugar</h3>
+              <input
+                class="popup__form-input popup__form-input-name"
+                type="text"
+                placeholder="Título"
+                required
+                id="title"
+              />
+              <input
+                class="popup__form-input popup__form-input-about"
+                type="url"
+                placeholder="Enlace a la imagen"
+                required
+                id="link"
+              />
+              <button
+                class="popup__form-button"
+                type="submit"
+                id="createButton"
+              >
+                Crear
+              </button>
             </fieldset>
           </form>
         </div>
@@ -78,6 +113,7 @@
             />
           </button>
         </section>
+
         <section class="cards">
           <ul class="cards__content">
             <li class="cards__item">

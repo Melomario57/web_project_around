@@ -2,17 +2,27 @@ let popUp = document.querySelector(".popup");
 let openButton = document.querySelector(".profile__edit-button");
 let closeButton = document.querySelector(".popup__button-cross");
 let saveButton = document.querySelector(".popup__form-button");
-let likeButton = document.querySelectorAll(".cards__hearth-button");
+let likeButtons = document.querySelectorAll(".cards__hearth-button");
+/* Sección formulario imagenes */
+let popupImage = document.getElementById("popupImage");
+let openAddButton = document.querySelector(".profile__add-button");
+let closeButtonAdd = document.getElementById("addCross");
+let createButton = document.getElementById("createButton");
 
 function toggleForm() {
   popUp.classList.toggle("popup_opened");
+
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
 }
-
 openButton.addEventListener("click", toggleForm);
 closeButton.addEventListener("click", toggleForm);
 
+function toggleForm2() {
+  popupImage.classList.toggle("popup_opened");
+}
+openAddButton.addEventListener("click", toggleForm2);
+closeButtonAdd.addEventListener("click", toggleForm2);
 /*
 function save() {
   popUp.classList.toggle("popup_opened");
@@ -23,6 +33,7 @@ saveButton.addEventListener("click", save);
 /* Editar nombre y acerca de mi en el formulario */
 
 let formElement = document.querySelector(".popup__form");
+let formElement2 = document.getElementById("imageForm");
 
 let profileName = document.querySelector(".profile__title");
 let profileJob = document.querySelector(".profile__subtitle");
@@ -48,10 +59,11 @@ function handleProfileFormSubmit(evt) {
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
+formElement2.addEventListener("submit", handleProfileFormSubmit);
 
-/* Función para los likes */
+/* Funcionalidad para los likes */
 
-document.querySelectorAll(".cards__hearth-button").forEach(function (button) {
+likeButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     button.classList.toggle("cards__hearth-button_active");
   });
@@ -65,7 +77,7 @@ function createCard() {
 }
 */
 
-/* Función para las 6 targetas iniciales */
+/* Aqui empieza la seccion de las targetas */
 const initialCards = [
   {
     name: "Valle de Yosemite",
