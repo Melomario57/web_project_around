@@ -49,6 +49,7 @@
 .cards__hearth-button {
   width: 21px;
   height: 21px;
+  padding-left: 5.5%;
   margin-right: 21px;
   margin-top: 4px;
   background-image: url("../images/like.svg");

@@ -15,6 +15,23 @@
   </head>
   <body>
     <div class="page">
+      <!-- Aquí empieza la funcionalidad para las targetas -->
+      <template class="template">
+        <li class="cards__item">
+          <img src="" alt="" class="cards__image" />
+          <button class="cards__trash-button">
+            <img
+              src="./images/trash.svg"
+              alt="trash picture"
+              class="cards__trash-button-image"
+            />
+          </button>
+          <div class="cards__image-info">
+            <p class="cards__image-text"></p>
+            <button class="cards__hearth-button"></button>
+          </div>
+        </li>
+      </template>
       <!-- Formulario boton editar -->
       <section class="popup pop">
         <div class="popup__container">
@@ -56,14 +73,14 @@
                 class="popup__form-input popup__form-input-name"
                 type="text"
                 placeholder="Título"
-                required
                 id="title"
+                name="title"
               />
               <input
                 class="popup__form-input popup__form-input-about"
                 type="url"
+                name="link"
                 placeholder="Enlace a la imagen"
-                required
                 id="link"
               />
               <button
@@ -77,6 +94,27 @@
           </form>
         </div>
       </section>
+      <!-- Aqui empieza lo del popup para las imagenes -->
+      <section class="popup" id="popImage">
+        <div class="popup__image-container">
+          <div class="popup__image-container-group">
+            <button
+              class="popup__image-button-cross"
+              type="button"
+              id="addCross"
+            >
+              <img src="./images/Close.png" alt="imagén de una cruz" />
+            </button>
+            <img
+              src=""
+              alt="Popup de la imágen correspondiente"
+              class="popup__image-big"
+            />
+            <h3 class="popup__image-title"></h3>
+          </div>
+        </div>
+      </section>
+
       <header class="header">
         <img
           class="header__logo"
@@ -114,119 +152,9 @@
           </button>
         </section>
         <section class="cards">
-          <ul class="cards__content">
-            <li class="cards__item">
-              <img
-                src="./images/image1.jpg"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Valle de Yosemite</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-            <li class="cards__item">
-              <img
-                src="./images/image2.png"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Lago Louise</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-            <li class="cards__item">
-              <img
-                src="./images/image3.png"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Montañas Calvas</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-            <li class="cards__item">
-              <img
-                src="./images/imge4.png"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Latemar</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-            <li class="cards__item">
-              <img
-                src="./images/image5.png"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Vanois National...</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-            <li class="cards__item">
-              <img
-                src="./images/image6.png"
-                alt="imágen del valle de Yosemite"
-                class="cards__image"
-              />
-              <button class="cards__trash-button">
-                <img
-                  src="./images/trash.svg"
-                  alt="trash picture"
-                  class="cards__trash-button-image"
-                />
-              </button>
-              <div class="cards__image-info">
-                <p class="cards__image-text">Lago di Braies</p>
-                <button class="cards__hearth-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__content"></ul>
         </section>
       </main>
-      <!-- Aquí empieza lo del formulario -->
 
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Mario MN</p>
