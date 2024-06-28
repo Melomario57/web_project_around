@@ -7,3 +7,6 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
+body {
+  background-color: #000;
+}
