@@ -26,7 +26,7 @@ let formElement2 = document.getElementById("imageForm");
 
 /* Popup para lo de las imágenes */
 
-const popImage = document.querySelector(".popup__image");
+const popImage = document.querySelector(".popup-image");
 const popTitle = document.querySelector(".popup__image-title");
 const popOpenImage = document.querySelector(".popup__image-big");
 const popCrossImage = document.querySelector(".popup__image-button-cross");
