@@ -48,7 +48,7 @@
 
 .cards__hearth-button {
   width: 21px;
-  height: 21px;
+
   padding-left: 5.5%;
   margin-right: 21px;
   margin-top: 4px;
@@ -68,7 +68,7 @@
   transition: 0.3s;
   background-repeat: no-repeat;
   width: 21px;
-  height: 21px;
+
   margin-right: 21px;
   margin-top: 4px;
 }

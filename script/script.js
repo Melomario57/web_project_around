@@ -14,7 +14,7 @@ let inputJob = document.getElementById("about");
 let popupImage = document.getElementById("popupImage");
 let openAddButton = document.querySelector(".profile__add-button");
 let closeButtonAdd = document.getElementById("addCross");
-let createButton = document.getElementById("createButton");
+let createButton = document.querySelector("popup__form-button-create");
 
 /* Funcionalidad para las targetas */
 
@@ -26,13 +26,13 @@ let formElement2 = document.getElementById("imageForm");
 
 /* Popup para lo de las imágenes */
 
-const popImage = document.getElementById("popImage");
+const popImage = document.querySelector(".popup__image");
 const popTitle = document.querySelector(".popup__image-title");
 const popOpenImage = document.querySelector(".popup__image-big");
 const popCrossImage = document.querySelector(".popup__image-button-cross");
 
 /* ------------------------------------------------------------------------ */
-
+/* Funcionalidad para agregar, eliminar y dar likes a las targetas */
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -67,6 +67,7 @@ formElement2.addEventListener("submit", function (event) {
   const newNode = createCard(titleValue, linkValue);
   cardsZone.prepend(newNode);
   formElement2.reset();
+  popupImage.classList.toggle("popup_opened");
 });
 
 initialCards.forEach(function (item) {
@@ -81,7 +82,7 @@ function createCard(name, link) {
 
   newNode.querySelector(".cards__image").src = link;
   newNode.querySelector(".cards__image-text").textContent = name;
-  newNode.querySelector(".cards__image").alt = name;
+  newNode.querySelector(".cards__image").alt = `imagen de ${name} `;
   newNode
     .querySelector(".cards__hearth-button")
     .addEventListener("click", function (event) {
@@ -94,10 +95,30 @@ function createCard(name, link) {
     .addEventListener("click", function () {
       newNode.remove();
     });
+  /* Funcionalidad para hacer el popup de las imagenes */
+  newNode.querySelector(".cards__image").addEventListener("click", function () {
+    popImage.classList.toggle("popup_opened");
+    popImage.querySelector(".popup__image-big").src = link;
+    popImage.querySelector(".popup__image-title").textContent = name;
+    popImage.querySelector(".popup__image-big").alt = `imagen de ${name} `;
+  });
+
   return newNode;
 }
+function toggleCross() {
+  popImage.classList.toggle("popup_opened");
+}
+popCrossImage.addEventListener("click", toggleCross);
+function toggleForm2() {
+  popupImage.classList.toggle("popup_opened");
+}
+openAddButton.addEventListener("click", toggleForm2);
+closeButtonAdd.addEventListener("click", toggleForm2);
+
+/* Extra modificación del mensaje predeterminado del atributo "required" */
 
 /* -------------------------------------------------- */
+/* Editar nombre y acerca de mi en el formulario */
 
 function toggleForm() {
   popUp.classList.toggle("popup_opened");
@@ -107,21 +128,6 @@ function toggleForm() {
 }
 openButton.addEventListener("click", toggleForm);
 closeButton.addEventListener("click", toggleForm);
-
-function toggleForm2() {
-  popupImage.classList.toggle("popup_opened");
-}
-openAddButton.addEventListener("click", toggleForm2);
-closeButtonAdd.addEventListener("click", toggleForm2);
-
-/*
-function create() {
-  popUp.classList.toggle("popup_opened");
-}
-
-saveButton.addEventListener("click", save);
-*/
-/* Editar nombre y acerca de mi en el formulario */
 
 inputName.value = profileName.textContent;
 inputJob.value = profileJob.textContent;
