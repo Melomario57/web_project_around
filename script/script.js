@@ -117,6 +117,26 @@ closeButtonAdd.addEventListener("click", toggleForm2);
 
 /* Extra modificación del mensaje predeterminado del atributo "required" */
 
+const requiredAlert = document.getElementById("title");
+requiredAlert.addEventListener("input", function (evt) {
+  this.setCustomValidity("");
+});
+requiredAlert.addEventListener("invalid", function (evt) {
+  if (this.validity.valueMissing) {
+    this.setCustomValidity("Alto !!! primero el nombre por favor");
+  }
+});
+const requiredAlert2 = document.getElementById("link");
+requiredAlert.addEventListener("input", function (evt) {
+  this.setCustomValidity("");
+});
+requiredAlert2.addEventListener("invalid", function (evt) {
+  if (this.validity.valueMissing) {
+    this.setCustomValidity(
+      "De nuevo alto !!! ingrese el enlace de la imágen por favor"
+    );
+  }
+});
 /* -------------------------------------------------- */
 /* Editar nombre y acerca de mi en el formulario */
 

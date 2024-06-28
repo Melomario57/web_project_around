@@ -32,7 +32,7 @@
 
 3. ### Las ramas Hotfix se utilizán para temas de corrección de errores, por ejemplo el header esta incompleto se crea una rama hotfix/header, y una vez subsanados los errores se fusiona posteriormente con main y se borra.
 
-## Que se aprendio:
+## Cosas aprendidas:
 
 - ### Darle funcionalidad al modificador de los botones para cambiarlos a color negro.
 
@@ -55,6 +55,20 @@
 ![alt text](image-3.png)
 
 ![alt text](image-2.png)
+
+## Cosas que se aprendierón en esta parte:
+
+- # Entender más la lógica de los arrays en cuanto al uso de sus objetos y propiedades.
+
+- # Utilizar la etiqueta template y nodos para realizar diversas funciones que permitieron agregar funcionalidad a las imágenes(crear, eliminar).
+
+- # Como solucionar conflictos entre ramas, es decir, intencionalmente se creo un error y con ayuda de VSCODE se pudo solucionar dicho conflicto.
+
+## Aprendizaje extra:
+
+- # Como cambiar las ventanas emergentes (atributo required de los inputs), mediante JS.
+
+![alt text](image-4.png)
 
 ## Link GitHub Pages:
 
