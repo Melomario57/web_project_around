@@ -32,6 +32,9 @@
   margin: 0;
   line-height: 1.15;
   grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .profile__subtitle {
   font-size: 18px;
@@ -39,6 +42,9 @@
   margin: 0;
   grid-area: subtitle;
   line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__image {
@@ -156,6 +162,9 @@
     font-size: 22px;
     width: 201px;
     line-height: 27px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .profile__subtitle {
     font-size: 14px;

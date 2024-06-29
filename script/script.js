@@ -1,4 +1,4 @@
-let popUp = document.querySelector(".popup");
+let popup = document.querySelector(".popup");
 let openButton = document.querySelector(".profile__edit-button");
 let closeButton = document.querySelector(".popup__button-cross");
 let saveButton = document.querySelector(".popup__form-button");
@@ -115,8 +115,6 @@ function toggleForm2() {
 openAddButton.addEventListener("click", toggleForm2);
 closeButtonAdd.addEventListener("click", toggleForm2);
 
-/* Extra modificación del mensaje predeterminado del atributo "required" */
-
 const requiredAlert = document.getElementById("title");
 requiredAlert.addEventListener("input", function (evt) {
   this.setCustomValidity("");
@@ -141,7 +139,7 @@ requiredAlert2.addEventListener("invalid", function (evt) {
 /* Editar nombre y acerca de mi en el formulario */
 
 function toggleForm() {
-  popUp.classList.toggle("popup_opened");
+  popup.classList.toggle("popup_opened");
 
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
@@ -163,7 +161,7 @@ function handleProfileFormSubmit(evt) {
 
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  popUp.classList.toggle("popup_opened");
+  popup.classList.toggle("popup_opened");
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
