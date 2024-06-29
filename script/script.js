@@ -127,7 +127,7 @@ requiredAlert.addEventListener("invalid", function (evt) {
   }
 });
 const requiredAlert2 = document.getElementById("link");
-requiredAlert.addEventListener("input", function (evt) {
+requiredAlert2.addEventListener("input", function (evt) {
   this.setCustomValidity("");
 });
 requiredAlert2.addEventListener("invalid", function (evt) {
