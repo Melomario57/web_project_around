@@ -66,9 +66,21 @@
 
 ## Aprendizaje extra:
 
-- # Como cambiar las ventanas emergentes (atributo required de los inputs), mediante JS.
+# Tercera parte
 
-![alt text](image-4.png)
+## Se aprendio los siguente:
+
+# Validar los formularios mediante mensajes de errores, y que su respectivo boton quedará inhabilitado si alguno de las entradas estaban incompletas.
+
+# Cerrar los formularios e imágenes mediante la tecla "Esc".
+
+# Cerrar los formularios e imágenes al momento de hacer click afuera de ellos
+
+## Imágenes de lo que se aprendió en esta parte:
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
 
 ## Link GitHub Pages:
 

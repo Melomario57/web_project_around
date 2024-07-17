@@ -1,7 +1,6 @@
-let popup = document.querySelector(".popup");
-let openButton = document.querySelector(".profile__edit-button");
-let closeButton = document.querySelector(".popup__button-cross");
-let saveButton = document.querySelector(".popup__form-button");
+let popupEdit = document.querySelector(".popup");
+let openEditButton = document.querySelector(".profile__edit-button");
+let closeEditButton = document.querySelector(".popup__button-cross");
 
 let formElement = document.querySelector(".popup__form");
 let profileName = document.querySelector(".profile__title");
@@ -11,10 +10,9 @@ let inputJob = document.getElementById("about");
 
 /* Sección segundo formulario para las imágenes */
 
-let popupImage = document.getElementById("popupImage");
+let popupAdd = document.getElementById("popupImage");
 let openAddButton = document.querySelector(".profile__add-button");
-let closeButtonAdd = document.getElementById("addCross");
-let createButton = document.querySelector("popup__form-button-create");
+let closeAddButton = document.getElementById("addCross");
 
 /* Funcionalidad para las targetas */
 
@@ -26,10 +24,10 @@ let formElement2 = document.getElementById("imageForm");
 
 /* Popup para lo de las imágenes */
 
-const popImage = document.querySelector(".popup-image");
+const popupCard = document.querySelector(".popup-image");
 const popTitle = document.querySelector(".popup__image-title");
-const popOpenImage = document.querySelector(".popup__image-big");
-const popCrossImage = document.querySelector(".popup__image-button-cross");
+const popupOpenCard = document.querySelector(".popup__image-big");
+const popupCloseCard = document.querySelector(".popup__image-button-cross");
 
 /* ------------------------------------------------------------------------ */
 /* Funcionalidad para agregar, eliminar y dar likes a las targetas */
@@ -67,7 +65,7 @@ formElement2.addEventListener("submit", function (event) {
   const newNode = createCard(titleValue, linkValue);
   cardsZone.prepend(newNode);
   formElement2.reset();
-  popupImage.classList.toggle("popup_opened");
+  closeAllPopups();
 });
 
 initialCards.forEach(function (item) {
@@ -97,58 +95,60 @@ function createCard(name, link) {
     });
   /* Funcionalidad para hacer el popup de las imagenes */
   newNode.querySelector(".cards__image").addEventListener("click", function () {
-    popImage.classList.toggle("popup_opened");
-    popImage.querySelector(".popup__image-big").src = link;
-    popImage.querySelector(".popup__image-title").textContent = name;
-    popImage.querySelector(".popup__image-big").alt = `imagen de ${name} `;
+    openPopup(popupCard);
+    popupCard.querySelector(".popup__image-big").src = link;
+    popupCard.querySelector(".popup__image-title").textContent = name;
+    popupCard.querySelector(".popup__image-big").alt = `imagen de ${name} `;
   });
 
   return newNode;
 }
-function toggleCross() {
-  popImage.classList.toggle("popup_opened");
+
+/* Funcion para la tecla Esc */
+
+function openPopup(popupParam) {
+  popupParam.classList.toggle("popup_opened");
+  document.addEventListener("keydown", escapeKeyHandler);
 }
-popCrossImage.addEventListener("click", toggleCross);
-function toggleForm2() {
-  popupImage.classList.toggle("popup_opened");
+popupCloseCard.addEventListener("click", closeAllPopups);
+popupOpenCard.addEventListener("click", () => {
+  openPopup(popupCard);
+  openEditButton.addEventListener("click", () => {
+    openPopup(popup);
+    closeEditButton.addEventListener("click", closeAllPopups);
+    openAddButton.addEventListener("click", () => {
+      openPopup(popupAdd);
+      closeAddButton.addEventListener("click", closeAllPopups);
+    });
+  });
+});
+
+function closeAllPopups() {
+  popupEdit.classList.remove("popup_opened");
+  popupAdd.classList.remove("popup_opened");
+  popupCard.classList.remove("popup_opened");
+
+  document.removeEventListener("keydown", escapeKeyHandler);
 }
-openAddButton.addEventListener("click", toggleForm2);
-closeButtonAdd.addEventListener("click", toggleForm2);
 
-const requiredAlert = document.getElementById("title");
-requiredAlert.addEventListener("input", function (evt) {
-  this.setCustomValidity("");
-});
-requiredAlert.addEventListener("invalid", function (evt) {
-  if (this.validity.valueMissing) {
-    this.setCustomValidity("Alto !!! primero el nombre por favor");
+function escapeKeyHandler(evt) {
+  if (evt.key === "Escape") {
+    closeAllPopups();
   }
-});
-const requiredAlert2 = document.getElementById("link");
-requiredAlert2.addEventListener("input", function (evt) {
-  this.setCustomValidity("");
-});
-requiredAlert2.addEventListener("invalid", function (evt) {
-  if (this.validity.valueMissing) {
-    this.setCustomValidity(
-      "De nuevo alto !!! ingrese el enlace de la imágen por favor"
-    );
-  }
-});
-/* -------------------------------------------------- */
-/* Editar nombre y acerca de mi en el formulario */
+}
 
-function toggleForm() {
-  popup.classList.toggle("popup_opened");
-
+function toggleForm(popupt) {
+  openPopup(popupt);
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
 }
-openButton.addEventListener("click", toggleForm);
-closeButton.addEventListener("click", toggleForm);
 
-inputName.value = profileName.textContent;
-inputJob.value = profileJob.textContent;
+openEditButton.addEventListener("click", () => toggleForm(popupEdit));
+closeEditButton.addEventListener("click", closeAllPopups);
+openAddButton.addEventListener("click", () => toggleForm(popupAdd));
+closeAddButton.addEventListener("click", closeAllPopups);
+popupOpenCard.addEventListener("click", () => toggleForm(popupCard));
+popupCloseCard.addEventListener("click", closeAllPopups);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -161,16 +161,27 @@ function handleProfileFormSubmit(evt) {
 
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  popup.classList.toggle("popup_opened");
+  closeAllPopups();
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
-/*
-function createCard() {
-  //el texto
-  //eventos
-  //dentro de la tarjeta nueva buscas cada boton y le asignas el evento correspondiente
-  //colocar la foto
-}
-*/
+/* Funcion para hacer cerrar al hacer click afuera de los formularios */
+
+document.querySelectorAll(".popup").forEach((popupElement) => {
+  popupElement.addEventListener("click", (evt) => {
+    if (evt.target.matches(".popup")) {
+      closeAllPopups();
+    }
+  });
+});
+
+/* Función para resetear el formulario */
+
+/* const form = document.querySelector(".form");
+
+form.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  resetForm(form);
+});
+ */

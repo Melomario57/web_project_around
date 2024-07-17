@@ -32,9 +32,9 @@
         </li>
       </template>
 
-      <section class="popup pop">
+      <section class="popup">
         <div class="popup__container">
-          <form class="popup__form form">
+          <form class="popup__form form" novalidate>
             <button class="popup__button-cross" type="button">
               <img src="./images/Close.png" alt="imagén de una cruz" />
             </button>
@@ -46,14 +46,22 @@
                 placeholder="Nombre"
                 required
                 id="name"
+                name="name"
+                minlength="2"
+                maxlength="40"
               />
+              <span class="form__error_name form__error"></span>
               <input
                 class="popup__form-input popup__form-input-about"
                 type="text"
                 placeholder="Acerca de mi"
                 required
                 id="about"
+                name="about"
+                minlength="2"
+                maxlength="200"
               />
+              <span class="form__error_about form__error"></span>
               <button class="popup__form-button" type="submit">Guardar</button>
             </fieldset>
           </form>
@@ -62,7 +70,7 @@
 
       <section class="popup" id="popupImage">
         <div class="popup__container">
-          <form class="popup__form form" id="imageForm">
+          <form class="popup__form form" id="imageForm" novalidate>
             <button class="popup__button-cross" type="button" id="addCross">
               <img src="./images/Close.png" alt="imagén de una cruz" />
             </button>
@@ -74,8 +82,11 @@
                 placeholder="Título"
                 id="title"
                 name="title"
+                minlength="2"
+                maxlength="30"
                 required
               />
+              <span class="form__error_title form__error"></span>
               <input
                 class="popup__form-input popup__form-input-about"
                 type="url"
@@ -84,10 +95,10 @@
                 id="link"
                 required
               />
+              <span class="form__error_link form__error"></span>
               <button
                 class="popup__form-button popup__form-button-create"
                 type="submit"
-                id="alert"
               >
                 Crear
               </button>
@@ -97,7 +108,7 @@
       </section>
 
       <section class="popup popup-image">
-        <div class="popup__image-container">
+        <div class="popup__image-container popup__container">
           <div class="popup__image-container-group">
             <button class="popup__image-button-cross" type="button">
               <img src="./images/Close.png" alt="imagén de una cruz" />
@@ -153,7 +164,7 @@
         <p class="footer__copyright">&copy; 2024 Mario MN</p>
       </footer>
     </div>
-
     <script src="./script/script.js"></script>
+    <script src="./script/validate.js"></script>
   </body>
 </html>
