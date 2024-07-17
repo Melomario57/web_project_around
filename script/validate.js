@@ -86,6 +86,7 @@ const enableValidation = (formConfig) => {
   );
   toggleButtonState(inputList, submitButton, formConfig);
 }; */
+
 enableValidation({
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",

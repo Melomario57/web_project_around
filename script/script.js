@@ -1,26 +1,26 @@
-let popupEdit = document.querySelector(".popup");
-let openEditButton = document.querySelector(".profile__edit-button");
-let closeEditButton = document.querySelector(".popup__button-cross");
+const popupEdit = document.querySelector(".popup");
+const openEditButton = document.querySelector(".profile__edit-button");
+const closeEditButton = document.querySelector(".popup__button-cross");
 
-let formElement = document.querySelector(".popup__form");
-let profileName = document.querySelector(".profile__title");
-let profileJob = document.querySelector(".profile__subtitle");
-let inputName = document.getElementById("name");
-let inputJob = document.getElementById("about");
+const formElementEdit = document.querySelector(".popup__form");
+const profileName = document.querySelector(".profile__title");
+const profileJob = document.querySelector(".profile__subtitle");
+const inputName = document.getElementById("name");
+const inputJob = document.getElementById("about");
 
 /* Sección segundo formulario para las imágenes */
 
-let popupAdd = document.getElementById("popupImage");
-let openAddButton = document.querySelector(".profile__add-button");
-let closeAddButton = document.getElementById("addCross");
+const popupAdd = document.getElementById("popupImage");
+const openAddButton = document.querySelector(".profile__add-button");
+const closeAddButton = document.getElementById("addCross");
 
 /* Funcionalidad para las targetas */
 
 const templateNode = document.querySelector(".template");
-let cardsZone = document.querySelector(".cards__content");
-let inputTitle = document.getElementById("title");
-let inputLink = document.getElementById("link");
-let formElement2 = document.getElementById("imageForm");
+const cardsZone = document.querySelector(".cards__content");
+const inputTitle = document.getElementById("title");
+const inputLink = document.getElementById("link");
+const formElementAdd = document.getElementById("imageForm");
 
 /* Popup para lo de las imágenes */
 
@@ -58,13 +58,13 @@ const initialCards = [
   },
 ];
 
-formElement2.addEventListener("submit", function (event) {
+formElementAdd.addEventListener("submit", function (event) {
   event.preventDefault();
   const titleValue = inputTitle.value;
   const linkValue = inputLink.value;
   const newNode = createCard(titleValue, linkValue);
   cardsZone.prepend(newNode);
-  formElement2.reset();
+  formElementAdd.reset();
   closeAllPopups();
 });
 
@@ -153,8 +153,8 @@ popupCloseCard.addEventListener("click", closeAllPopups);
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameValue = inputName.value;
-  let jobValue = inputJob.value;
+  const nameValue = inputName.value;
+  const jobValue = inputJob.value;
 
   profileName.textContent = nameValue;
   profileJob.textContent = jobValue;
@@ -164,7 +164,7 @@ function handleProfileFormSubmit(evt) {
   closeAllPopups();
 }
 
-formElement.addEventListener("submit", handleProfileFormSubmit);
+formElementEdit.addEventListener("submit", handleProfileFormSubmit);
 
 /* Funcion para hacer cerrar al hacer click afuera de los formularios */
 
@@ -183,5 +183,4 @@ document.querySelectorAll(".popup").forEach((popupElement) => {
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
   resetForm(form);
-});
- */
+}); */
