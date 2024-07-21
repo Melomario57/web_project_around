@@ -41,11 +41,13 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (inputList, submitButton) => {
+const toggleButtonState = (inputList, submitButton, formConfig) => {
   if (hasInvalidInput(inputList)) {
     submitButton.disabled = true;
+    submitButton.classList.add(formConfig.inactiveButtonClass);
   } else {
     submitButton.disabled = false;
+    submitButton.classList.remove(formConfig.inactiveButtonClass);
   }
 };
 
@@ -56,11 +58,11 @@ const setEventListeners = (formElement, formConfig) => {
   const submitButton = formElement.querySelector(
     formConfig.submitButtonSelector
   );
-  toggleButtonState(inputList, submitButton);
+  toggleButtonState(inputList, submitButton, formConfig);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement, formConfig);
-      toggleButtonState(inputList, submitButton);
+      toggleButtonState(inputList, submitButton, formConfig);
     });
   });
 };
@@ -76,7 +78,7 @@ const enableValidation = (formConfig) => {
     setEventListeners(formElement, formConfig);
   });
 };
-/* const resetForm = (formElement, formConfig) => {
+const resetForm = (formElement, formConfig) => {
   formElement.reset();
   const submitButton = formElement.querySelector(
     formConfig.submitButtonSelector
@@ -85,13 +87,15 @@ const enableValidation = (formConfig) => {
     formElement.querySelectorAll(formConfig.inputSelector)
   );
   toggleButtonState(inputList, submitButton, formConfig);
-}; */
+};
 
-enableValidation({
+const formConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
   submitButtonSelector: ".popup__form-button",
   inactiveButtonClass: "popup__form-button_disabled",
   inputErrorClass: "popup__form-input_invalid",
   errorClass: "form__error-active",
-});
+};
+
+enableValidation(formConfig);

@@ -65,6 +65,7 @@ formElementAdd.addEventListener("submit", function (event) {
   const newNode = createCard(titleValue, linkValue);
   cardsZone.prepend(newNode);
   formElementAdd.reset();
+  resetForm(event.target, formConfig);
   closeAllPopups();
 });
 
@@ -161,7 +162,9 @@ function handleProfileFormSubmit(evt) {
 
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
+  resetForm(evt.target, formConfig);
   closeAllPopups();
+  formElementEdit.reset();
 }
 
 formElementEdit.addEventListener("submit", handleProfileFormSubmit);

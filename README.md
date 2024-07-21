@@ -48,9 +48,9 @@
 
 - ### Agregar un nuevo formulario que contendrá las funcionalidades necesarias para agregar, remover(se agregá funcionalidad al icono de trash) o cambiar el orden de estas mismas.
 
-- ## Al seleccionar una imágen, esta deberá aparecer de manera emergente, es decir, al hacer click dicha imágen se agarandará junto a su respectivo nombre y se ajustara su tamaño dependiendo la resolución del dispositivo.
+- ## #Al seleccionar una imágen, esta deberá aparecer de manera emergente, es decir, al hacer click dicha imágen se agarandará junto a su respectivo nombre y se ajustara su tamaño dependiendo la resolución del dispositivo.
 
-# Imágenes con la funcionalidades mencionadas con anterioridad:
+## Imágenes con la funcionalidades mencionadas con anterioridad:
 
 ![alt text](image-3.png)
 
@@ -58,23 +58,23 @@
 
 ## Cosas que se aprendierón en esta parte:
 
-- # Entender más la lógica de los arrays en cuanto al uso de sus objetos y propiedades.
+- ### Entender más la lógica de los arrays en cuanto al uso de sus objetos y propiedades.
 
-- # Utilizar la etiqueta template y nodos para realizar diversas funciones que permitieron agregar funcionalidad a las imágenes(crear, eliminar).
+- ### Utilizar la etiqueta template y nodos para realizar diversas funciones que permitieron agregar funcionalidad a las imágenes(crear, eliminar).
 
-- # Como solucionar conflictos entre ramas, es decir, intencionalmente se creo un error y con ayuda de VSCODE se pudo solucionar dicho conflicto.
+- ### Como solucionar conflictos entre ramas, es decir, intencionalmente se creo un error y con ayuda de VSCODE se pudo solucionar dicho conflicto.
 
-## Aprendizaje extra:
-
-# Tercera parte
+## Tercera parte
 
 ## Se aprendio los siguente:
 
-# Validar los formularios mediante mensajes de errores, y que su respectivo boton quedará inhabilitado si alguno de las entradas estaban incompletas.
+### Validar los formularios mediante mensajes de errores, y que su respectivo boton quedará inhabilitado si alguno de las entradas estaban incompletas.
 
-# Cerrar los formularios e imágenes mediante la tecla "Esc".
+### Cerrar los formularios e imágenes mediante la tecla "Esc".
 
-# Cerrar los formularios e imágenes al momento de hacer click afuera de ellos
+### Cerrar los formularios e imágenes al momento de hacer click afuera de ellos.
+
+### Reiniciar el botón de cada formulario para que vuelva a estar desactivado, sino se hace ningun cambio en los campos de entrada.
 
 ## Imágenes de lo que se aprendió en esta parte:
 
@@ -82,6 +82,6 @@
 
 ![alt text](image-6.png)
 
-## Link GitHub Pages:
+### Link GitHub Pages:
 
 ## https://melomario57.github.io/web_project_around/index.html
