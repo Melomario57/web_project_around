@@ -25,62 +25,13 @@ const formElementAdd = document.getElementById("imageForm");
 
 /* Popup para lo de las imágenes */
 
-export const popupCard = document.querySelector(".popup-image");
-export const popTitle = document.querySelector(".popup__image-title");
-export const popupOpenCard = document.querySelector(".popup__image-big");
-export const popupCloseCard = document.querySelector(
-  ".popup__image-button-cross"
-);
+const popupCard = document.querySelector(".popup-image");
+const popTitle = document.querySelector(".popup__image-title");
+const popupOpenCard = document.querySelector(".popup__image-big");
+const popupCloseCard = document.querySelector(".popup__image-button-cross");
 
 /* ------------------------------------------------------------------------ */
 /* Funcionalidad para agregar, eliminar y dar likes a las targetas */
-export const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-];
-
-export const formConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__form-input",
-  submitButtonSelector: ".popup__form-button",
-  inactiveButtonClass: "popup__form-button_disabled",
-  inputErrorClass: "popup__form-input_invalid",
-  errorClass: "form__error-active",
-};
-
-/* Resetear boton formulario */
-/* const resetForm = (formElement, formConfig) => {
-  formElement.reset();
-  const submitButton = formElement.querySelector(
-    formConfig.submitButtonSelector
-  );
-  const inputList = Array.from(
-    formElement.querySelectorAll(formConfig.inputSelector)
-  );
-  toggleButtonState(inputList, submitButton, formConfig);
-}; */
 
 function openPopup(popupParam) {
   popupParam.classList.toggle("popup_opened");
@@ -163,3 +114,5 @@ function handleProfileFormSubmit(evt) {
   closeAllPopups();
   formElementEdit.reset();
 }
+/* Exportar para que funcionen el popup de las targetas en la clase Card */
+export { popTitle, popupCard, popupOpenCard, popupCloseCard };
