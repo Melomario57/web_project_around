@@ -82,6 +82,14 @@
 
 ![alt text](image-6.png)
 
+## Cuarta Parte:
+
+## Se implemento el uso de POO para crear las clases Card y FromValidator
+
+## En esta etapa se refactorizo el código, y se dividio en modulos(export e import)
+
+![alt text](image-7.png)
+
 ### Link GitHub Pages:
 
 ## https://melomario57.github.io/web_project_around/index.html
