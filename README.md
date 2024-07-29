@@ -84,9 +84,13 @@
 
 ## Cuarta Parte:
 
-## Se implemento el uso de POO para crear las clases Card y FromValidator
+### Se implemento el uso de POO para crear las clases Card y FromValidator
 
-## En esta etapa se refactorizo el código, y se dividio en modulos(export e import)
+### En esta etapa se refactorizo el código, y se dividio en modulos(export e import)
+
+## Imágen del proyecto funcionando con todo lo implementado anteriormente:
+
+![alt text](image-8.png)
 
 ![alt text](image-7.png)
 
