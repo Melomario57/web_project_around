@@ -115,4 +115,11 @@ function handleProfileFormSubmit(evt) {
   formElementEdit.reset();
 }
 /* Exportar para que funcionen el popup de las targetas en la clase Card */
-export { popTitle, popupCard, popupOpenCard, popupCloseCard };
+export function openImagePopup(name, link) {
+  popupOpenCard.src = link;
+  popupCard.classList.add("popup_opened");
+  popupOpenCard.alt = name;
+  popTitle.textContent = name;
+  popupCloseCard.addEventListener("click", () => closeAllPopups);
+  document.addEventListener("keydown", escapeKeyHandler);
+}

@@ -1,4 +1,4 @@
-import { popTitle, popupCard, popupCloseCard, popupOpenCard } from "./utils.js";
+import { openImagePopup } from "./utils.js";
 export default class Card {
   constructor(name, link, template) {
     this._name = name;
@@ -49,29 +49,8 @@ export default class Card {
       .addEventListener("click", () => {
         this._handlerRemove();
       });
-    popupCloseCard.addEventListener("click", () => {
-      this._handlerClosePop();
-    });
-
-    popupCloseCard.addEventListener("click", () => this._handlerClosePop());
-    document.addEventListener("keydown", this._handlerEscClose);
   }
   handlerOpenPop() {
-    popupOpenCard.src = this._link;
-    popupCard.classList.add("popup_opened");
-    popupOpenCard.alt = this._name;
-    popTitle.textContent = this._name;
-    popupCard.classList.add("popup_opened");
-    document.addEventListener("keydown", this._handlerEscClose);
-  }
-  _handlerEscClose(evt) {
-    if (evt.key === "Escape") {
-      popupCard.classList.remove("popup_opened");
-    }
-  }
-
-  _handlerClosePop() {
-    popupCard.classList.remove("popup_opened");
-    document.removeEventListener("keydown", this._handlerEscClose);
+    openImagePopup(this._name, this._link);
   }
 }
