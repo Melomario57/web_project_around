@@ -66,7 +66,7 @@
 
 ## Tercera parte
 
-## Se aprendio los siguente:
+## Se aprendió lo siguiente:
 
 ### Validar los formularios mediante mensajes de errores, y que su respectivo boton quedará inhabilitado si alguno de las entradas estaban incompletas.
 
@@ -84,16 +84,16 @@
 
 ## Cuarta Parte:
 
-### Se implemento el uso de POO para crear las clases Card y FromValidator
+### Se implemento el uso de POO para crear las clases Card y FormValidator
 
-### En esta etapa se refactorizo el código, y se dividio en modulos(export e import)
+### En esta etapa se refactorizo el código, es decir la gran parte del código anterior se reemplazo por el contenido de la nuevas clases
 
-## Imágen del proyecto funcionando con todo lo implementado anteriormente:
+### En esta etapa el proyecto se dividió en modulos(export e import), y solo se dejo una etiqueta script con el atributo y valor, type = "module" para poder vincular los modulos
 
-![alt text](image-8.png)
+![alt text](image-9.png)
 
-![alt text](image-7.png)
+![alt text](image-10.png)
 
 ### Link GitHub Pages:
 
-## https://melomario57.github.io/web_project_around/index.html
+### https://melomario57.github.io/web_project_around/index.html

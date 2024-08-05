@@ -1,4 +1,4 @@
-import Card from "./Card.js";
+import Card from "../components/Card.js";
 const popupEdit = document.querySelector(".popup");
 const openEditButton = document.querySelector(".profile__edit-button");
 const closeEditButton = document.querySelector(".popup__button-cross");

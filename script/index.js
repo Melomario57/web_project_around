@@ -1,5 +1,6 @@
-import FormValidator from "./FormValidate.js";
-import Card from "./Card.js";
+import FormValidator from "../components/FormValidate.js";
+import Card from "../components/Card.js";
+import Section from "../components/Section.js";
 const formConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
@@ -37,14 +38,20 @@ const initialCards = [
 
 /* Instanciar targetas */
 
-initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, ".template");
-  const cardElement = card.generateCard();
-  document.querySelector(".cards__content").append(cardElement);
-});
-
 /* instanciar formulario */
 const formValidatorProfile = new FormValidator(formConfig, ".popup__form");
 formValidatorProfile.enableValidation();
 const formValidatorCard = new FormValidator(formConfig, "#imageForm");
 formValidatorCard.enableValidation();
+/* Renderizar las targetas  */
+const sectionCards = new Section(
+  {
+    items: initialCards,
+    renderer: (element) => {
+      const card = new Card(element.name, element.link, ".template");
+      sectionCards.addItem(card.generateCard());
+    },
+  },
+  ".cards__content"
+);
+sectionCards.renderer();
