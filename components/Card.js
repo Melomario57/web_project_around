@@ -1,9 +1,9 @@
-import { openImagePopup } from "../script/utils.js";
 export default class Card {
-  constructor(name, link, template) {
+  constructor(name, link, template, { handleCardClick }) {
     this._name = name;
     this._link = link;
     this._template = template;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -35,9 +35,11 @@ export default class Card {
     this._removeCard = this._element.remove();
   }
   _setEventListeners() {
-    this._element.querySelector("img").addEventListener("click", () => {
-      this.handlerOpenPop();
-    });
+    this._element
+      .querySelector(".cards__image")
+      .addEventListener("click", () => {
+        this._handleCardClick(this._name, this._link);
+      });
     this._element
       .querySelector(".cards__hearth-button")
       .addEventListener("click", () => {
@@ -49,8 +51,5 @@ export default class Card {
       .addEventListener("click", () => {
         this._handlerRemove();
       });
-  }
-  handlerOpenPop() {
-    openImagePopup(this._name, this._link);
   }
 }

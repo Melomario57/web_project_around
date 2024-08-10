@@ -1,6 +1,23 @@
 import FormValidator from "../components/FormValidate.js";
 import Card from "../components/Card.js";
 import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import {
+  profileName,
+  profileJob,
+  popupEdit,
+  popupAdd,
+  openEditButton,
+  openAddButton,
+  inputName,
+  inputJob,
+  popupCard,
+  cardsZone,
+} from "./utils.js";
+
 const formConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
@@ -36,19 +53,57 @@ const initialCards = [
   },
 ];
 
-/* Instanciar targetas */
+/* Insranciar para agregar imagenes con el handleCardClick */
+
+const popupImage = new PopupWithImage("popupCard");
+
+const popupAddButton = new PopupWithForm("popupImage", (inputValues) => {
+  const card = new Card(inputValues.title, inputValues.link, ".template", {
+    handleCardClick: () => {
+      popupImage.open(inputValues.title, inputValues.link);
+    },
+  });
+  cardsZone.prepend(card.generateCard());
+});
+
+/* Instanciar información de usuario */
+
+const userInfo = new UserInfo({
+  usernameSelector: ".profile__title",
+  jobSelector: ".profile__subtitle",
+});
+
+const popupProfile = new PopupWithForm("editProfile", (inputValues) => {
+  profileName.textContent = inputValues.name;
+  profileJob.textContent = inputValues.job;
+  popupProfile.close();
+});
+openEditButton.addEventListener("click", () => {
+  popupProfile.open();
+  const userData = userInfo.getUserInfo();
+  inputName.value = userData.username;
+  inputJob.value = userData.job;
+});
+
+openAddButton.addEventListener("click", () => {
+  popupAddButton.open();
+});
 
 /* instanciar formulario */
 const formValidatorProfile = new FormValidator(formConfig, ".popup__form");
 formValidatorProfile.enableValidation();
 const formValidatorCard = new FormValidator(formConfig, "#imageForm");
 formValidatorCard.enableValidation();
-/* Renderizar las targetas  */
+/* Instanciar las targetas  */
 const sectionCards = new Section(
   {
     items: initialCards,
     renderer: (element) => {
-      const card = new Card(element.name, element.link, ".template");
+      const card = new Card(element.name, element.link, ".template", {
+        handleCardClick: () => {
+          popupImage.open(element.name, element.link);
+        },
+      });
       sectionCards.addItem(card.generateCard());
     },
   },
