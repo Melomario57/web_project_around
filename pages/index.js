@@ -13,10 +13,10 @@ import {
   openEditButton,
   openAddButton,
   inputName,
-  inputJob,
+  inputAbout,
   popupCard,
   cardsZone,
-} from "./utils.js";
+} from "../script/utils.js";
 
 const formConfig = {
   formSelector: ".popup__form",
@@ -75,14 +75,14 @@ const userInfo = new UserInfo({
 
 const popupProfile = new PopupWithForm("editProfile", (inputValues) => {
   profileName.textContent = inputValues.name;
-  profileJob.textContent = inputValues.job;
+  profileJob.textContent = inputValues.about;
   popupProfile.close();
 });
 openEditButton.addEventListener("click", () => {
   popupProfile.open();
   const userData = userInfo.getUserInfo();
   inputName.value = userData.username;
-  inputJob.value = userData.job;
+  inputAbout.value = userData.job;
 });
 
 openAddButton.addEventListener("click", () => {

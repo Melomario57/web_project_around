@@ -6,8 +6,8 @@ const closeEditButton = document.querySelector(".popup__button-cross");
 export const formElementEdit = document.querySelector(".popup__form");
 export const profileName = document.querySelector(".profile__title");
 export const profileJob = document.querySelector(".profile__subtitle");
-export const inputName = document.getElementById("name");
-export const inputJob = document.getElementById("about");
+export const inputName = document.querySelector("#name");
+export const inputAbout = document.querySelector("#about");
 
 /* Sección segundo formulario para las imágenes */
 
