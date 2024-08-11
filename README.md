@@ -94,6 +94,16 @@
 
 ![alt text](image-10.png)
 
+## Quinta parte:
+
+## Se creo el archivo Section.js con el fin de renderizar los elementos de la página.
+
+## Se añadieron más clases para refactorizar el código, es decir las funciones utilizadas para cerrar, abrir y añadir datos de usuario en los formularios se adaptaron e implementaron con POO.
+
+## Esta fase del proyecto fue subido con WEBPACK con el fin de empaquetar y optimizar el código comprimiendolo
+
+![alt text](image-11.png)
+
 ### Link GitHub Pages:
 
 ### https://melomario57.github.io/web_project_around/index.html
