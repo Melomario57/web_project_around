@@ -10,8 +10,6 @@
     <meta name="keywords" content="HTML, CSS, media queries, Javascript" />
     <meta name="author" content="MarioMN" />
     <title>Project Around</title>
-    <link rel="shortcut icon" href="./fav.ico" />
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
@@ -20,7 +18,7 @@
           <img src=" " alt="" class="cards__image" />
           <button class="cards__trash-button">
             <img
-              src="./images/trash.svg"
+              src="<%=require('./images/trash.svg')%>"
               alt="trash picture"
               class="cards__trash-button-image"
             />
@@ -36,7 +34,10 @@
         <div class="popup__container">
           <form class="popup__form form" id="formProfile" novalidate>
             <button class="popup__button-cross" type="button">
-              <img src="./images/Close.png" alt="imagén de una cruz" />
+              <img
+                src=" <%=require('./images/Close.png')%>"
+                alt="imagén de una cruz"
+              />
             </button>
             <fieldset class="popup__form-fieldset">
               <h3 class="popup__title">Nuevo lugar</h3>
@@ -74,7 +75,10 @@
         <div class="popup__container">
           <form class="popup__form form" id="imageForm" novalidate>
             <button class="popup__button-cross" type="button" id="addCross">
-              <img src="./images/Close.png" alt="imagén de una cruz" />
+              <img
+                src=" <%=require('./images/Close.png')%>"
+                alt="imagén de una cruz"
+              />
             </button>
             <fieldset class="popup__form-fieldset">
               <p class="popup__title">Nuevo lugar</p>
@@ -113,7 +117,10 @@
         <div class="popup__image-container popup__container">
           <div class="popup__image-container-group">
             <button id="imageCross" class="popup__button-cross" type="button">
-              <img src="./images/Close.png" alt="imagén de una cruz" />
+              <img
+                src=" <%=require('./images/Close.png')%>"
+                alt="imagén de una cruz"
+              />
             </button>
             <img src=" " alt="" class="popup__image-big" />
             <p class="popup__image-title"></p>
@@ -124,7 +131,7 @@
       <header class="header">
         <img
           class="header__logo"
-          src="./images/logo.svg"
+          src=" <%=require('./images/logo.svg')%>"
           alt="Logo alrededor de usa"
         />
       </header>
@@ -134,14 +141,14 @@
           <div class="profile__column">
             <img
               class="profile__image"
-              src="./images/Avatar.png"
+              src=" <%=require('./images/Avatar.png')%>"
               alt="imagen del explorador Jacques Cousteau"
             />
             <div class="profile__info">
               <h1 class="profile__title">Jacques Cousteau</h1>
               <button class="profile__edit-button" type="button">
                 <img
-                  src="./images/edit.png"
+                  src=" <%=require('./images/edit.png')%>"
                   alt="Botón para editar"
                   class="profile__edit-button-image"
                 />
@@ -151,7 +158,7 @@
           </div>
           <button class="profile__add-button" type="button">
             <img
-              src="./images/add.png"
+              src=" <%=require('./images/add.png')%>"
               alt="Botón para editar"
               class="profile__add-button-image"
             />
@@ -166,6 +173,5 @@
         <p class="footer__copyright">&copy; 2024 Mario MN</p>
       </footer>
     </div>
-    <script src="./pages/index.js" type="module"></script>
   </body>
 </html>

@@ -1,10 +1,12 @@
-import FormValidator from "../components/FormValidate.js";
-import Card from "../components/Card.js";
-import Section from "../components/Section.js";
-import UserInfo from "../components/UserInfo.js";
+import "./pages/index.css";
 
-import PopupWithForm from "../components/PopupWithForm.js";
-import PopupWithImage from "../components/PopupWithImage.js";
+import FormValidator from "./components/FormValidate.js";
+import Card from "./components/Card.js";
+import Section from "./components/Section.js";
+import UserInfo from "./components/UserInfo.js";
+
+import PopupWithForm from "./components/PopupWithForm.js";
+import PopupWithImage from "./components/PopupWithImage.js";
 import {
   profileName,
   profileJob,
@@ -16,7 +18,7 @@ import {
   inputAbout,
   popupCard,
   cardsZone,
-} from "../script/utils.js";
+} from "./utils/utils.js";
 
 const formConfig = {
   formSelector: ".popup__form",
