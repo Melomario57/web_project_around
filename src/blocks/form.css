@@ -22,6 +22,11 @@
   border-radius: 3%;
 }
 
+#avatarForm {
+  width: 430px;
+  height: 260px;
+}
+
 .popup__title {
   color: black;
   font-size: 24px;
@@ -94,6 +99,10 @@
     background-color: white;
     width: 282px;
     height: 322px;
+  }
+  #avatarForm {
+    width: 282px;
+    height: 285px;
   }
   .popup__form-button {
     width: 238px;

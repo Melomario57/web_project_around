@@ -25,7 +25,10 @@
           </button>
           <div class="cards__image-info">
             <p class="cards__image-text"></p>
-            <button class="cards__hearth-button"></button>
+
+              <button class="cards__hearth-button"></button>
+              <span class="cards__hearth-counter"></span>
+            </div>
           </div>
         </li>
       </template>
@@ -128,6 +131,62 @@
         </div>
       </section>
 
+      <section class="popup" id="PopupConfirmation">
+        <div class="popup__container">
+          <form class="popup__form form" id="confirmationForm" novalidate>
+            <button class="popup__button-cross" type="button" id="addCross">
+              <img
+                src=" <%=require('./images/Close.png')%>"
+                alt="imagén de una cruz"
+              />
+            </button>
+            <fieldset class="popup__form-fieldset">
+              <p class="popup__title popup__title_confirmation">
+                ¿Estás seguro/a?
+              </p>
+              <button
+                class="popup__form-button popup__form-button-confirm"
+                type="submit"
+              >
+                Si
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <section class="popup" id="popupAvatar">
+        <div class="popup__container">
+          <form class="popup__form form" id="avatarForm" novalidate>
+            <button class="popup__button-cross" type="button" id="addCross">
+              <img
+                src=" <%=require('./images/Close.png')%>"
+                alt="imagén de una cruz"
+              />
+            </button>
+            <fieldset class="popup__form-fieldset">
+              <p class="popup__title popup__title_avatar">
+                Cambiar foto de perfil
+              </p>
+              <input
+                class="popup__form-input popup__form-input-avatar"
+                type="url"
+                name="avatar"
+                placeholder="Ingrese el nuevo enlace"
+                id="avatar"
+                required
+              />
+              <span class="form__error_avatar form__error"></span>
+              <button
+                class="popup__form-button popup__form-button-avatar"
+                type="submit"
+              >
+                Guardar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
       <header class="header">
         <img
           class="header__logo"
@@ -143,6 +202,11 @@
               class="profile__image"
               src=" <%=require('./images/Avatar.png')%>"
               alt="imagen del explorador Jacques Cousteau"
+            />
+            <img
+              class="profile__image-switch-button"
+              src="  <%=require('./images/editAvatar.png')%> "
+              alt="Boton para cambiar la imágen de perfil"
             />
             <div class="profile__info">
               <h1 class="profile__title">Jacques Cousteau</h1>

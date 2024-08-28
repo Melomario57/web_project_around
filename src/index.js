@@ -4,9 +4,11 @@ import FormValidator from "./components/FormValidate.js";
 import Card from "./components/Card.js";
 import Section from "./components/Section.js";
 import UserInfo from "./components/UserInfo.js";
-
+/* import PopupWithConfirmation from "./components/PopupWithConfirmation.js"; */
 import PopupWithForm from "./components/PopupWithForm.js";
 import PopupWithImage from "./components/PopupWithImage.js";
+
+import api from "./utils/Api.js";
 import {
   profileName,
   profileJob,
@@ -18,7 +20,14 @@ import {
   inputAbout,
   popupCard,
   cardsZone,
+  imageAvatar,
+  buttonAvatar,
+  formAvatar,
+  popupFormAvatar,
+  avatarInput,
+  saveButton,
 } from "./utils/utils.js";
+import { data } from "autoprefixer";
 
 const formConfig = {
   formSelector: ".popup__form",
@@ -28,44 +37,53 @@ const formConfig = {
   inputErrorClass: "popup__form-input_invalid",
   errorClass: "form__error-active",
 };
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-];
+const avatarNode = document.querySelector(".profile__image");
+const initialCards = null;
+let currentUser = null;
 
-/* Insranciar para agregar imagenes con el handleCardClick */
+api.getUserInfo().then((user) => {
+  currentUser = user;
+  userInfo.setUserInfo({ username: user.name, job: user.about });
+  avatarNode.src = user.avatar;
+});
+api
+  .getInitialCards()
+  .then((initialCards) => {
+    const sectionCards = new Section(
+      {
+        items: initialCards,
+        renderer: (element) => {
+          const card = new Card(element.name, element.link, ".template", {
+            handleCardClick: () => {
+              popupImage.open(element.name, element.link);
+            },
+          });
+          sectionCards.addItem(card.generateCard());
+        },
+      },
+      ".cards__content"
+    );
+    sectionCards.renderer();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const popupImage = new PopupWithImage("popupCard");
 
 const popupAddButton = new PopupWithForm("popupImage", (inputValues) => {
-  const card = new Card(inputValues.title, inputValues.link, ".template", {
-    handleCardClick: () => {
-      popupImage.open(inputValues.title, inputValues.link);
-    },
+  api.addCard(inputValues.title, inputValues.link).then((res) => {
+    const card = new Card(res.name, res.link, ".template", {
+      handleCardClick: () => {
+        popupImage.open(res.title, res.link);
+      },
+    });
+    cardsZone.prepend(card.generateCard());
   });
-  cardsZone.prepend(card.generateCard());
+});
+
+openAddButton.addEventListener("click", () => {
+  popupAddButton.open();
 });
 
 /* Instanciar información de usuario */
@@ -76,19 +94,33 @@ const userInfo = new UserInfo({
 });
 
 const popupProfile = new PopupWithForm("editProfile", (inputValues) => {
-  profileName.textContent = inputValues.name;
-  profileJob.textContent = inputValues.about;
-  popupProfile.close();
+  api.updateUser(inputValues.name, inputValues.about).then((user) => {
+    userInfo.setUserInfo({ username: user.name, job: user.about });
+
+    popupProfile.close();
+  });
 });
+
 openEditButton.addEventListener("click", () => {
   popupProfile.open();
   const userData = userInfo.getUserInfo();
   inputName.value = userData.username;
   inputAbout.value = userData.job;
 });
+/* Popup avatar */
 
-openAddButton.addEventListener("click", () => {
-  popupAddButton.open();
+const popupAvatar = new PopupWithForm("popupAvatar", (inputValues) => {
+  api.updateAvatar(inputValues.avatar).then((res) => {
+    imageAvatar.src = res.avatar;
+    imageAvatar.alt = "Avatar";
+    avatarInput.value = "";
+
+    popupAvatar.close();
+  });
+});
+
+buttonAvatar.addEventListener("click", () => {
+  popupAvatar.open();
 });
 
 /* instanciar formulario */
@@ -96,19 +128,6 @@ const formValidatorProfile = new FormValidator(formConfig, ".popup__form");
 formValidatorProfile.enableValidation();
 const formValidatorCard = new FormValidator(formConfig, "#imageForm");
 formValidatorCard.enableValidation();
+const formValidatorAvatar = new FormValidator(formConfig, "#avatarForm");
+formValidatorAvatar.enableValidation();
 /* Instanciar las targetas  */
-const sectionCards = new Section(
-  {
-    items: initialCards,
-    renderer: (element) => {
-      const card = new Card(element.name, element.link, ".template", {
-        handleCardClick: () => {
-          popupImage.open(element.name, element.link);
-        },
-      });
-      sectionCards.addItem(card.generateCard());
-    },
-  },
-  ".cards__content"
-);
-sectionCards.renderer();
