@@ -16,7 +16,7 @@
 
 ## Imágen del Proyecto:
 
-![alt text](image-1.png)
+<img src="../web_project_around/src/images/image-1.png"  border="0"   />
 
 ## ¿Que novedades se agregarán?
 
@@ -24,7 +24,7 @@
 
 ### Por otra parte, se trabajará con ramas git de una manera más profesional, conformado por el siguiente manera:
 
-![alt text](image.png)
+<img src="../web_project_around/src/images/image.png"  border="0"   />
 
 1. ### La rama Features representá cada parte del sitio web, es decir se crearán ramas por separadas, por ejemplo feature/header representá el encabezado.
 
@@ -52,9 +52,9 @@
 
 ## Imágenes con la funcionalidades mencionadas con anterioridad:
 
-![alt text](image-3.png)
+<img src="../web_project_around/src/images/image-3.png"  border="0"   />
 
-![alt text](image-2.png)
+<img src="../web_project_around/src/images/image-2.png"  border="0"   />
 
 ## Cosas que se aprendierón en esta parte:
 
@@ -78,9 +78,9 @@
 
 ## Imágenes de lo que se aprendió en esta parte:
 
-![alt text](image-5.png)
+<img src="../web_project_around/src/images/image-5.png"  border="0"   />
 
-![alt text](image-6.png)
+<img src="../web_project_around/src/images/image-6.png"  border="0"   />
 
 ## Cuarta Parte:
 
@@ -90,9 +90,9 @@
 
 ### En esta etapa el proyecto se dividió en modulos(export e import), y solo se dejo una etiqueta script con el atributo y valor, type = "module" para poder vincular los modulos
 
-![alt text](image-9.png)
+<img src="../web_project_around/src/images/image-9.png"  border="0"   />
 
-![alt text](image-10.png)
+<img src="../web_project_around/src/images/image-10.png"  border="0"   />
 
 ## Quinta parte:
 
@@ -102,7 +102,7 @@
 
 ### Esta fase del proyecto fue subido con WEBPACK con el fin de empaquetar y optimizar el código comprimiendolo
 
-![alt text](image-11.png)
+<img src="../web_project_around/src/images/image-11.png"  border="0"   />
 
 ## Sexta parte:
 
@@ -116,11 +116,11 @@
 
 ### Se modificaron un poco los archivos html y css, para que la nuevas funcionalidades fueran más visibles(foto de perfil y el contador de likes)
 
-![alt text](image-12.png)
+<img src="../web_project_around/src/images/image-12.png"  border="0"   />
 
-![alt text](image-14.png)
+<img src="../web_project_around/src/images/image-14.png"  border="0"   />
 
-![alt text](image-15.png)
+<img src="../web_project_around/src/images/image-15.png"  border="0"   />
 
 ### Link GitHub Pages:
 
