@@ -96,13 +96,31 @@
 
 ## Quinta parte:
 
-## Se creo el archivo Section.js con el fin de renderizar los elementos de la página.
+### Se creo el archivo Section.js con el fin de renderizar los elementos de la página.
 
-## Se añadieron más clases para refactorizar el código, es decir las funciones utilizadas para cerrar, abrir y añadir datos de usuario en los formularios se adaptaron e implementaron con POO.
+### Se añadieron más clases para refactorizar el código, es decir las funciones utilizadas para cerrar, abrir y añadir datos de usuario en los formularios se adaptaron e implementaron con POO.
 
-## Esta fase del proyecto fue subido con WEBPACK con el fin de empaquetar y optimizar el código comprimiendolo
+### Esta fase del proyecto fue subido con WEBPACK con el fin de empaquetar y optimizar el código comprimiendolo
 
 ![alt text](image-11.png)
+
+## Sexta parte:
+
+### Se implemento el uso de Apis, con el fin de comprender el uso de estas, y sus respectivos métodos.
+
+### Los métodos(put, delete, post, get y patch), fueron muy utiles para refactorizar el codigo y obtener información para la funcionalidad de la página
+
+### Como prueba del punto anterior, se añadieron 2 ventanas modales(cambiar foto de perfil y eliminar una targeta), gracias a la opcion "Network" se pudo el estado de las solicitudes y sus respuestas.
+
+## Al pulsar el boton "Guardar" de ls formularios cambia el texto a "Guardando.." mientras se envian los datos
+
+### Se modificaron un poco los archivos html y css, para que la nuevas funcionalidades fueran más visibles(foto de perfil y el contador de likes)
+
+![alt text](image-12.png)
+
+![alt text](image-14.png)
+
+![alt text](image-15.png)
 
 ### Link GitHub Pages:
 

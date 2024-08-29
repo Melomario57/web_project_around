@@ -4,7 +4,7 @@ import FormValidator from "./components/FormValidate.js";
 import Card from "./components/Card.js";
 import Section from "./components/Section.js";
 import UserInfo from "./components/UserInfo.js";
-/* import PopupWithConfirmation from "./components/PopupWithConfirmation.js"; */
+import PopupWithConfirmation from "./components/PopupWithConfirmation.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 
@@ -20,9 +20,9 @@ import {
   inputAbout,
   popupCard,
   cardsZone,
-  imageAvatar,
   buttonAvatar,
   formAvatar,
+  imageAvatar,
   popupFormAvatar,
   avatarInput,
   saveButton,
@@ -53,11 +53,31 @@ api
       {
         items: initialCards,
         renderer: (element) => {
-          const card = new Card(element.name, element.link, ".template", {
-            handleCardClick: () => {
-              popupImage.open(element.name, element.link);
-            },
-          });
+          const card = new Card(
+            element.name,
+            element.link,
+            element,
+            ".template",
+            currentUser,
+            {
+              handleCardClick: () => {
+                popupImage.open(element.name, element.link);
+              },
+              handleDeleteCard: (cardId, callback) => {
+                popupConfirm.open(() => {
+                  api.deleteCard(cardId).then(() => {
+                    callback();
+                  });
+                });
+              },
+              handleLikeButtonClick: (cardId) => {
+                return api.addLike(cardId);
+              },
+              handleDeleteClick: (cardId) => {
+                return api.removeLike(cardId);
+              },
+            }
+          );
           sectionCards.addItem(card.generateCard());
         },
       },
@@ -72,10 +92,23 @@ api
 const popupImage = new PopupWithImage("popupCard");
 
 const popupAddButton = new PopupWithForm("popupImage", (inputValues) => {
-  api.addCard(inputValues.title, inputValues.link).then((res) => {
-    const card = new Card(res.name, res.link, ".template", {
+  return api.addCard(inputValues.title, inputValues.link).then((res) => {
+    const card = new Card(res.name, res.link, res, ".template", currentUser, {
       handleCardClick: () => {
         popupImage.open(res.title, res.link);
+      },
+      handleDeleteCard: (cardId, callback) => {
+        popupConfirm.open(() => {
+          api.deleteCard(cardId).then(() => {
+            callback();
+          });
+        });
+      },
+      handleLikeButtonClick: (cardId) => {
+        return api.addLike(cardId);
+      },
+      handleDeleteClick: (cardId) => {
+        return api.removeLike(cardId);
       },
     });
     cardsZone.prepend(card.generateCard());
@@ -94,7 +127,7 @@ const userInfo = new UserInfo({
 });
 
 const popupProfile = new PopupWithForm("editProfile", (inputValues) => {
-  api.updateUser(inputValues.name, inputValues.about).then((user) => {
+  return api.updateUser(inputValues.name, inputValues.about).then((user) => {
     userInfo.setUserInfo({ username: user.name, job: user.about });
 
     popupProfile.close();
@@ -110,7 +143,7 @@ openEditButton.addEventListener("click", () => {
 /* Popup avatar */
 
 const popupAvatar = new PopupWithForm("popupAvatar", (inputValues) => {
-  api.updateAvatar(inputValues.avatar).then((res) => {
+  return api.updateAvatar(inputValues.avatar).then((res) => {
     imageAvatar.src = res.avatar;
     imageAvatar.alt = "Avatar";
     avatarInput.value = "";
@@ -118,6 +151,8 @@ const popupAvatar = new PopupWithForm("popupAvatar", (inputValues) => {
     popupAvatar.close();
   });
 });
+
+const popupConfirm = new PopupWithConfirmation("PopupConfirmation");
 
 buttonAvatar.addEventListener("click", () => {
   popupAvatar.open();

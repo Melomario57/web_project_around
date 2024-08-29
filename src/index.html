@@ -10,6 +10,7 @@
     <meta name="keywords" content="HTML, CSS, media queries, Javascript" />
     <meta name="author" content="MarioMN" />
     <title>Project Around</title>
+    <link rel="icon" href="./fav.ico" />
   </head>
   <body>
     <div class="page">
@@ -26,9 +27,8 @@
           <div class="cards__image-info">
             <p class="cards__image-text"></p>
 
-              <button class="cards__hearth-button"></button>
-              <span class="cards__hearth-counter"></span>
-            </div>
+            <button class="cards__hearth-button"></button>
+            <span class="cards__hearth-counter"></span>
           </div>
         </li>
       </template>
@@ -198,18 +198,16 @@
       <main class="content">
         <section class="profile">
           <div class="profile__column">
-            <img
-              class="profile__image"
-              src=" <%=require('./images/Avatar.png')%>"
-              alt="imagen del explorador Jacques Cousteau"
-            />
-            <img
-              class="profile__image-switch-button"
-              src="  <%=require('./images/editAvatar.png')%> "
-              alt="Boton para cambiar la imágen de perfil"
-            />
+            <div class="profile__image-wrapper">
+              <img
+                class="profile__image"
+                src=" <%=require('./images/Avatar.png')%>"
+                alt="imagen del explorador Jacques Cousteau"
+              />
+              <button class="profile__image-switch-button"></button>
+            </div>
             <div class="profile__info">
-              <h1 class="profile__title">Jacques Cousteau</h1>
+              <h1 class="profile__title"></h1>
               <button class="profile__edit-button" type="button">
                 <img
                   src=" <%=require('./images/edit.png')%>"
@@ -217,7 +215,7 @@
                   class="profile__edit-button-image"
                 />
               </button>
-              <h2 class="profile__subtitle">Explorador</h2>
+              <h2 class="profile__subtitle"></h2>
             </div>
           </div>
           <button class="profile__add-button" type="button">

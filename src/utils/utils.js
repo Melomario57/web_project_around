@@ -14,9 +14,7 @@ export const popupFormAvatar = document.querySelector("#popupAvatar");
 export const formAvatar = document.querySelector("#avatarForm");
 export const avatarInput = document.querySelector(".popup__form-input-avatar");
 export const imageAvatar = document.querySelector(".profile__image");
-export const buttonAvatar = document.querySelector(
-  ".profile__image-switch-button"
-);
+export const buttonAvatar = document.querySelector(".profile__image-wrapper");
 
 /* Sección segundo formulario para las imágenes */
 

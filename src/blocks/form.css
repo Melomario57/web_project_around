@@ -26,6 +26,9 @@
   width: 430px;
   height: 260px;
 }
+#confirmationForm {
+  height: 180px;
+}
 
 .popup__title {
   color: black;
