@@ -35,7 +35,12 @@
 
       <section class="popup" id="editProfile">
         <div class="popup__container">
-          <form class="popup__form form" id="formProfile" novalidate>
+          <form
+            class="popup__form form"
+            id="formProfile"
+            method="dialog"
+            novalidate
+          >
             <button class="popup__button-cross" type="button">
               <img
                 src=" <%=require('./images/Close.png')%>"
@@ -43,7 +48,7 @@
               />
             </button>
             <fieldset class="popup__form-fieldset">
-              <h3 class="popup__title">Nuevo lugar</h3>
+              <h3 class="popup__title">Editar Perfil</h3>
               <input
                 class="popup__form-input popup__form-input-name"
                 type="text"
@@ -51,7 +56,6 @@
                 required
                 id="name"
                 name="name"
-                value="Jacques"
                 minlength="2"
                 maxlength="40"
               />
@@ -64,7 +68,6 @@
                 id="about"
                 name="about"
                 minlength="2"
-                value="Developer"
                 maxlength="200"
               />
               <span class="form__error_about form__error"></span>
@@ -76,7 +79,12 @@
 
       <section class="popup" id="popupImage">
         <div class="popup__container">
-          <form class="popup__form form" id="imageForm" novalidate>
+          <form
+            class="popup__form form"
+            id="imageForm"
+            novalidate
+            method="dialog"
+          >
             <button class="popup__button-cross" type="button" id="addCross">
               <img
                 src=" <%=require('./images/Close.png')%>"
@@ -133,7 +141,12 @@
 
       <section class="popup" id="PopupConfirmation">
         <div class="popup__container">
-          <form class="popup__form form" id="confirmationForm" novalidate>
+          <form
+            class="popup__form form"
+            id="confirmationForm"
+            novalidate
+            method="dialog"
+          >
             <button class="popup__button-cross" type="button" id="addCross">
               <img
                 src=" <%=require('./images/Close.png')%>"
@@ -156,7 +169,12 @@
       </section>
       <section class="popup" id="popupAvatar">
         <div class="popup__container">
-          <form class="popup__form form" id="avatarForm" novalidate>
+          <form
+            class="popup__form form"
+            id="avatarForm"
+            novalidate
+            method="dialog"
+          >
             <button class="popup__button-cross" type="button" id="addCross">
               <img
                 src=" <%=require('./images/Close.png')%>"

@@ -71,6 +71,7 @@
   background: transparent;
   cursor: pointer;
   border: none;
+  transition: opacity 0.5s ease;
 }
 .profile__image-wrapper:hover .profile__image-switch-button {
   cursor: pointer;
@@ -86,7 +87,7 @@
   left: 47px;
   background-image: url(../images/editAvatar.png);
   opacity: 0;
-
+  transition: opacity 0.5s ease;
   border: 0;
   background-repeat: no-repeat;
   background-color: transparent;
