@@ -149,6 +149,9 @@
     padding-left: 2%;
     width: 100%;
   }
+  .cards__hearth-counter {
+    right: 29px;
+  }
 }
 /* .cards__image-hearth:active {
   background-color: black;
